@@ -7,7 +7,7 @@ public class ImageFadeInFadeOut : MonoBehaviour {
     public Image title;
     public Image fadeScreen;
 
-    float timer = 1.2f;
+    float timer = 3.0f;
 
     public GameObject fadeScreenGameObject;
 
@@ -15,7 +15,7 @@ public class ImageFadeInFadeOut : MonoBehaviour {
 
   
 
-    public float fadeSpeed = 1.5f;
+    public float fadeSpeed = 0.2f;
     public float fadeTime = 90.2f;
 
     Color colorFadeOut;
