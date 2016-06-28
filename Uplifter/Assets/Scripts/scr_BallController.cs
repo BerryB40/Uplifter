@@ -7,17 +7,19 @@ public class scr_BallController : MonoBehaviour {
     public float jump;
     public float moveSpeed;
     public float rotSpeed;
+	public float bouncy = 0.3f;
     public bool isGrounded;
-    public PhysicMaterial bounce;
+    public PhysicsMaterial2D bounce;
     public CircleCollider2D circleCol;
- 
 
+    public GameObject spawn1;
 
   
 	void Start () 
     {
-        bounce = GetComponent<PhysicMaterial>();
+        bounce = GetComponent<PhysicsMaterial2D>();
         circleCol = GetComponent<CircleCollider2D>();
+
 	}
 	
 	
@@ -65,19 +67,22 @@ public class scr_BallController : MonoBehaviour {
         }
         //--------------------- To stop the ball bouncing ----------------------
 
-        if (Input.GetAxis("LeftStickY") > 0.8)
+        if (Input.GetAxis("LeftStickY") > 0.7)
         { 
-			Debug.Log ("Down");
             circleCol.sharedMaterial = null; 
         }
 
         if (Input.GetAxis("LeftStickY") == 0)
         {
-            PhysicsMaterial2D bouncy = new PhysicsMaterial2D();
-            bouncy.bounciness = .3f;
-            circleCol.sharedMaterial = bouncy;
+			bounce = new PhysicsMaterial2D ("Bounce");
+			bounce.bounciness = bouncy;
+			circleCol.sharedMaterial = bounce;
         }
-     
+     	 
+		//if (Input.GetKeyDown (KeyCode.H)) 
+		//{
+		//	bouncy = 0.8f;
+		//}
        
     
 
@@ -90,19 +95,29 @@ public class scr_BallController : MonoBehaviour {
         isGrounded = true;
 
 
-        if (coll.gameObject.tag == "wall") 
+        if (coll.gameObject.tag == "Wall") 
         {
             isGrounded = false;
         }
 
-       /* if (coll.gameObject.tag == "ground")
+        if (coll.gameObject.tag == "Ground")
         {
             isGrounded = true;
         }
-        */
+        
     }
     void OnCollisionExit2D(Collision2D coll)
     {
         isGrounded = false;
+    }
+
+
+    void OnTriggerEnter2D(Collider2D other) 
+    {
+        if (other.gameObject.tag == "OutOfBounds") 
+        {
+            this.transform.position = spawn1.transform.position;
+        }
+
     }
 }
