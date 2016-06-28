@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class ImageFadeInFadeOut : MonoBehaviour {
@@ -79,7 +78,7 @@ public class ImageFadeInFadeOut : MonoBehaviour {
 
             if (timer <= 0)
             {
-                SceneManager.LoadScene("testScene");
+                Application.LoadLevel("testScene");
             }
 
             //Cross fade color allows you to fade color based on the time set on the float.
