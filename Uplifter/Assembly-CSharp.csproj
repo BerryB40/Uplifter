@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\MovingBackgroundImage.cs" />
      <Compile Include="Assets\Scripts\UI Menu\ImageFadeInFadeOut.cs" />
      <Compile Include="Assets\Scripts\menuScript.cs" />
      <Compile Include="Assets\Scripts\scr_BallController.cs" />

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class ImageFadeInFadeOut : MonoBehaviour {
@@ -16,7 +17,7 @@ public class ImageFadeInFadeOut : MonoBehaviour {
   
 
     public float fadeSpeed = 0.2f;
-    public float fadeTime = 90.2f;
+    public float fadeTime = 0.25f;
 
     Color colorFadeOut;
     Color colorFadeIn;
@@ -40,10 +41,10 @@ public class ImageFadeInFadeOut : MonoBehaviour {
         //This is the color used to fade in/out an image.
 
         //title.color = new Color(255f, 255f, 255f, Mathf.Lerp(255f, 255f, Time.deltaTime * 3f));
-        colorFadeOut = new Color(0.2f, 0.2f, 0.2f, 0f);
+        colorFadeOut = new Color(0f, 0f, 0f, Time.deltaTime * 3f);
         fadeScreen.CrossFadeColor(colorFadeOut, fadeTime, true, true);
 
-        Destroy(fadeScreenGameObject, 3);
+        Destroy(fadeScreenGameObject, 2);
         
         
     
@@ -78,7 +79,7 @@ public class ImageFadeInFadeOut : MonoBehaviour {
 
             if (timer <= 0)
             {
-                Application.LoadLevel("testScene");
+                SceneManager.LoadScene("testScene");
             }
 
             //Cross fade color allows you to fade color based on the time set on the float.
