@@ -11,12 +11,14 @@ public class scr_BallController : MonoBehaviour {
     public bool isGrounded;
     public PhysicsMaterial2D bounce;
     public CircleCollider2D circleCol;
-
+    public scr_LevelCheck levelCheck;
     public GameObject fadeInScript;
     public GameObject spawn1;
 
     public ImageFadeInFadeOut menuScr;
     public menuScript menuS;
+
+   
 
 
   
@@ -24,7 +26,8 @@ public class scr_BallController : MonoBehaviour {
     {
         bounce = GetComponent<PhysicsMaterial2D>();
         circleCol = GetComponent<CircleCollider2D>();
-
+        //levelCheck = GetComponent<scr_LevelCheck>();
+        levelCheck = GameObject.FindObjectOfType<scr_LevelCheck>();
         menuScr = GameObject.FindObjectOfType<ImageFadeInFadeOut>(); //Gets the image fade in and fade out scripts.
         menuS = GameObject.FindObjectOfType<menuScript>(); //Gets the menu script component.
 	}
@@ -33,7 +36,8 @@ public class scr_BallController : MonoBehaviour {
 	void Update () 
     {
            BallMovement();
-  
+
+
 	}
 
     void BallMovement()
@@ -86,10 +90,14 @@ public class scr_BallController : MonoBehaviour {
 			circleCol.sharedMaterial = bounce;
         }
      	 
-		//if (Input.GetKeyDown (KeyCode.H)) 
-		//{
-		//	bouncy = 0.8f;
-		//}
+		//---------------------- Level 2 ------------------------------------
+
+        if (levelCheck.level2 == true)
+        {
+            moveSpeed = 8f;
+            rotSpeed = 8f;
+            bouncy = 0.8f;
+        }
        
     
 
@@ -142,8 +150,14 @@ public class scr_BallController : MonoBehaviour {
 
         if (other.gameObject.tag == "MenuTrigger") 
         {
+            Application.LoadLevel(2);
+            levelCheck.level2 = true;
+           
+        }
 
-            Application.Quit();
+        if (other.gameObject.tag == "test") 
+        {
+            levelCheck.level2 = true;
         }
 
     }

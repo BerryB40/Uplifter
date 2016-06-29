@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\scr_CloudScript.cs" />
      <Compile Include="Assets\Scripts\scr_CloudSpawn.cs" />
      <Compile Include="Assets\Scripts\scr_Jukebox.cs" />
+     <Compile Include="Assets\Scripts\scr_LevelCheck.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
