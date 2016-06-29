@@ -22,6 +22,11 @@ public class menuScript : MonoBehaviour {
     {
         Application.Quit();
     }
+
+    public void Menu() 
+    {
+        Application.LoadLevel(0);
+    }
 	
 	// Update is called once per frame
 	void Update () {

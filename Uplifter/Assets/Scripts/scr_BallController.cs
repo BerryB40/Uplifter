@@ -18,6 +18,7 @@ public class scr_BallController : MonoBehaviour {
     public ImageFadeInFadeOut menuScr;
     public menuScript menuS;
 
+
   
 	void Start () 
     {
@@ -111,17 +112,7 @@ public class scr_BallController : MonoBehaviour {
             isGrounded = true;
         }
 
-        if (coll.gameObject.tag == "Start")
-        {
-            
-            menuS.StartGame();
-        }
-
-        if(coll.gameObject.tag == "Quit")
-        {
-            
-            menuS.QuitGame();
-        }
+   
         
     }
     void OnCollisionExit2D(Collision2D coll)
@@ -135,6 +126,24 @@ public class scr_BallController : MonoBehaviour {
         if (other.gameObject.tag == "OutOfBounds") 
         {
             this.transform.position = spawn1.transform.position;
+        }
+
+        if (other.gameObject.tag == "Start")
+        {
+
+            menuS.StartGame();
+        }
+
+        if (other.gameObject.tag == "Quit")
+        {
+
+            menuS.QuitGame();
+        }
+
+        if (other.gameObject.tag == "MenuTrigger") 
+        {
+
+            Application.Quit();
         }
 
     }
