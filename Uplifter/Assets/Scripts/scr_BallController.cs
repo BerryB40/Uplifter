@@ -12,7 +12,11 @@ public class scr_BallController : MonoBehaviour {
     public PhysicsMaterial2D bounce;
     public CircleCollider2D circleCol;
 
+    public GameObject fadeInScript;
     public GameObject spawn1;
+
+    public ImageFadeInFadeOut menuScr;
+    public menuScript menuS;
 
   
 	void Start () 
@@ -20,6 +24,8 @@ public class scr_BallController : MonoBehaviour {
         bounce = GetComponent<PhysicsMaterial2D>();
         circleCol = GetComponent<CircleCollider2D>();
 
+        menuScr = GameObject.FindObjectOfType<ImageFadeInFadeOut>(); //Gets the image fade in and fade out scripts.
+        menuS = GameObject.FindObjectOfType<menuScript>(); //Gets the menu script component.
 	}
 	
 	
@@ -103,6 +109,18 @@ public class scr_BallController : MonoBehaviour {
         if (coll.gameObject.tag == "Ground")
         {
             isGrounded = true;
+        }
+
+        if (coll.gameObject.tag == "Start")
+        {
+            
+            menuS.StartGame();
+        }
+
+        if(coll.gameObject.tag == "Quit")
+        {
+            
+            menuS.QuitGame();
         }
         
     }

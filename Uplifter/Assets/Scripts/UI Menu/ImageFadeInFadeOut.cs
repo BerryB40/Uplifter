@@ -15,7 +15,7 @@ public class ImageFadeInFadeOut : MonoBehaviour {
 
   
 
-    public float fadeSpeed = 0.2f;
+    public float fadeSpeed = 4.5f;
     public float fadeTime = 0.25f;
 
     Color colorFadeOut;
@@ -29,6 +29,7 @@ public class ImageFadeInFadeOut : MonoBehaviour {
         yield return new WaitForSeconds(3);
         Debug.Log("Wait Complete");
     }
+
 
 	// Use this for initialization
 	void Start () {
@@ -66,7 +67,7 @@ public class ImageFadeInFadeOut : MonoBehaviour {
 
         if (menu.sceneStart) 
         {
-            colorFadeIn = new Color(0f, 0f, 0f, 1f);
+            colorFadeIn = new Color(0f, 0f, 0f, Time.deltaTime * 2.8f);
 
             timer -= Time.deltaTime;
 

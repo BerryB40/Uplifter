@@ -1,7 +1,11 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
+Project("{06661835-754C-B29A-88D8-D0C2D097DC5C}") = "Uplifter", "Assembly-CSharp-firstpass-vs.csproj", "{F86E2462-A552-2999-04C0-6D4E7E2BC65E}"
+EndProject
 Project("{06661835-754C-B29A-88D8-D0C2D097DC5C}") = "Uplifter", "Assembly-CSharp-vs.csproj", "{179707BB-3F0F-274E-484B-8AA2FC4F3FBD}"
+EndProject
+Project("{06661835-754C-B29A-88D8-D0C2D097DC5C}") = "Uplifter", "Assembly-CSharp-Editor-vs.csproj", "{8AABF740-259D-CC8C-A18E-4B0F1BE36805}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +13,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F86E2462-A552-2999-04C0-6D4E7E2BC65E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F86E2462-A552-2999-04C0-6D4E7E2BC65E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F86E2462-A552-2999-04C0-6D4E7E2BC65E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F86E2462-A552-2999-04C0-6D4E7E2BC65E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{179707BB-3F0F-274E-484B-8AA2FC4F3FBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{179707BB-3F0F-274E-484B-8AA2FC4F3FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{179707BB-3F0F-274E-484B-8AA2FC4F3FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{179707BB-3F0F-274E-484B-8AA2FC4F3FBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AABF740-259D-CC8C-A18E-4B0F1BE36805}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AABF740-259D-CC8C-A18E-4B0F1BE36805}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AABF740-259D-CC8C-A18E-4B0F1BE36805}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AABF740-259D-CC8C-A18E-4B0F1BE36805}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-							GlobalSection(MonoDevelopProperties) = preSolution
+													GlobalSection(MonoDevelopProperties) = preSolution
+=======
+						GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> e85aeae27a33332badee1f6dd96b58ee97ad3839
 		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 
