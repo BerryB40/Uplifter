@@ -9,7 +9,7 @@ public class scr_CloudScript : MonoBehaviour {
 	void Start () {
         render = GetComponent<SpriteRenderer>();
 
-        render.color = new Color(1f, 1f, 1f, .35f);
+        render.color = new Color(1f, 1f, 1f, .45f);
 	}
 	
 	// Update is called once per frame
